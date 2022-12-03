@@ -3,9 +3,11 @@ let isDown = false;
 let startX;
 let scrollLeft;
 
-slider.addEventListener("mousedown", () => {
+slider.addEventListener("mousedown", (e) => {
     isDown = true;
     slider.classList.add("active");
+    startX = e.pageX - slider.offsetLeft; // find out the initial position of user's click!
+    console.log(startX);
 })
 
 slider.addEventListener("mouseleave", () => {
