@@ -26,7 +26,8 @@ slider.addEventListener("mousemove", (e) => {
     if(!isDown) return;  // stop function from running
     e.preventDefault();
     const x = e.pageX - slider.offsetLeft; // find out the cursor position on each mouse move
-    console.log({x, startX});
+    const deviation = (x - startX) * 3; // how far we have deviated from initial mouse click / point
+    slider.scrollLeft = scrollLeft - deviation;
 })
 
 
